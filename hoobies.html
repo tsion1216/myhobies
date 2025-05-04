@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poetry</title>
+    <style>
+      body {
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgb(254, 255, 165) 0%,
+          rgb(255, 232, 182) 90%
+        );
+        text-align: center;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+      }
+
+      .grid img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+        object-fit: cover;
+      }
+
+      .left {
+        border-radius: 15px;
+        margin: 20px;
+        max-width: 700px;
+        background: white;
+        padding: 25px;
+        text-align: center;
+      }
+
+      .more-info {
+        font-size: 30px;
+        padding: 10px 40px;
+        margin: 40px auto;
+        border: 1px solid #f0134d;
+        border-radius: 10px;
+        background: white;
+        transition: all 150ms ease-in-out;
+        display: inline-block;
+      }
+
+      a {
+        color: #280f34;
+        text-decoration: none;
+        margin: 0 auto;
+      }
+
+      .more-info:hover {
+        background-color: #f0134d;
+      }
+
+      p {
+        color: #1e2a78;
+        font-size: 30px;
+        margin: 15px 0;
+      }
+
+      .right h2 {
+        color: #8d0033;
+        margin-top: 0;
+      }
+
+      .right {
+        margin: 25px;
+        padding: 20px;
+      }
+
+      button {
+        font-size: 20px;
+        border-radius: 20px;
+        color: white;
+        background: #878ecd;
+        padding: 15px;
+        transition: all 150ms ease-in-out;
+        border: 1px solid #878ecd;
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: black;
+        background: white;
+        border: 1px solid white;
+      }
+
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .top h1 {
+        margin: 0;
+        flex-grow: 1;
+        text-align: center;
+        color: #111d5e;
+        font-size: 39px;
+        padding: 0 20px;
+      }
+
+      .top button {
+        position: static;
+        margin: 20px auto;
+      }
+
+      .left h2 {
+        color: #520556;
+        font-size: 25px;
+        font-weight: 300;
+        margin-top: 0;
+      }
+
+      .first-img:hover {
+        transform: scale(0.9);
+        filter: contrast(80%);
+      }
+
+      .first-img {
+        border-radius: 8px;
+        transition: all 150ms ease-in-out;
+        max-width: 100%;
+      }
+
+      .bottom {
+        background: black;
+        color: white;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      .grid img:hover {
+        transform: scale(1.1);
+      }
+
+      .darkmode {
+        color: white;
+        background: radial-gradient(
+          circle at 1.8% 4.8%,
+          rgb(17, 23, 58) 0%,
+          rgb(58, 85, 148) 90%
+        );
+      }
+
+      .darkmode .left {
+        background: radial-gradient(
+          circle at -4% -12.9%,
+          rgb(74, 98, 110) 0.3%,
+          rgb(30, 33, 48) 90.2%
+        );
+      }
+
+      .darkmode p {
+        color: white;
+      }
+
+      .darkmode .right h2 {
+        color: #ffe7ad;
+      }
+
+      .darkmode .left h2 {
+        color: white;
+      }
+
+      .darkmode .top h1 {
+        color: white;
+      }
+
+      .darkmode .bottom {
+        background: transparent;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1200px) {
+        .main {
+          flex-direction: column;
+          align-items: center;
+        }
+        .right {
+          margin-top: 40px;
+          max-width: 700px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .top h1 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 24px;
+        }
+        .more-info {
+          font-size: 24px;
+          padding: 8px 30px;
+        }
+        .left,
+        .right {
+          padding: 15px;
+          margin: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .top h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 20px;
+        }
+        .left h2 {
+          font-size: 20px;
+        }
+        .more-info {
+          font-size: 20px;
+          padding: 6px 20px;
+        }
+        button {
+          font-size: 16px;
+          padding: 10px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h1>Express Yourself With Poetry</h1>
+      <button class="dark">CHANGE THEME</button>
+    </div>
+    <div class="main">
+      <div class="left">
+        <h2>Let Poetry Become Your Happy Habit</h2>
+        <img
+          src="https://letterreview.com/wp-content/uploads/2022/05/poetry-word-in-vintage-letterpress-wood.jpg"
+          class="first-img"
+        />
+        <div class="grid">
+          <img
+            src="https://motivationeffect.com/wp-content/uploads/2018/01/For-what-its-worth-1024x576.jpg"
+          />
+          <img
+            src="https://www.weareteachers.com/wp-content/uploads/4-18-768x768.jpg"
+          />
+        </div>
+        <button class="more-info">
+          <a href="https://www.poetry.org/whatis.htm">More info</a>
+        </button>
+      </div>
+      <div class="right">
+        <h2>BEFORE YOU ACT</h2>
+        <p>"Before you act, listen.</p>
+
+        <p>Before you read, think.</p>
+
+        <p>Before you spend, earn.</p>
+
+        <p>Before you criticize, wait.</p>
+
+        <p>Before you quit, try."</p>
+
+        <p>― Ernst Hemmingway</p>
+        <p class="bottom">Coded with💜 by Tsion</p>
+      </div>
+    </div>
+    <script>
+      function changetheme() {
+        let body = document.querySelector("body");
+        if (body.classList.contains("darkmode")) {
+          body.classList.remove("darkmode");
+        } else {
+          body.classList.add("darkmode");
+        }
+      }
+      let theme = document.querySelector(".dark");
+      theme.addEventListener("click", changetheme);
+    </script>
+  </body>
+</html>
